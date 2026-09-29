@@ -66,16 +66,17 @@
         </tr>
         </thead>
         <tbody>
+        <c:forEach var="p" items=${"personajes"}>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>${p.nombreCompleto()}></td>
+                <td>${p.edad()}</td>
+                <td>${p.ocupacion()}</td>
+                <td>${p.lugar()}</td>
             </tr>
         </c:forEach>
         </tbody>
+
     </table>
-</c:if>
 
 </body>
 </html>

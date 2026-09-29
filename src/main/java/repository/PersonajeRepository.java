@@ -2,9 +2,11 @@ package repository;
 
 import model.Personaje;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PersonajeRepository {
+
     private static final List<Personaje> PERSONAJES = List.of(
             new Personaje("Homer",    "Simpson",    39, "Inspector de seguridad", "Central Nuclear",   true),
             new Personaje("Marge",    "Simpson",    36, "Ama de casa",            "Casa Simpson",      true),
