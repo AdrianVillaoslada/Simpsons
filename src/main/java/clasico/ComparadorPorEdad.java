@@ -28,6 +28,7 @@ public class ComparadorPorEdad implements Comparator<Personaje> {
         if (resultado == 0) {
             resultado = p1.nombre().compareTo(p2.nombre());
         }
+
         return resultado;
     }
 }
