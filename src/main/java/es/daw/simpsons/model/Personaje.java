@@ -1,6 +1,6 @@
-package model;
+package es.daw.simpsons.model;
 
-public record   Personaje(
+public record Personaje(
         String nombre,
         String apellido,
         int edad,

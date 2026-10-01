@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Personajes de Springfield</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/estilos/estilos.css">
 </head>
 <body>
 <h1>Personajes de Springfield</h1>
@@ -66,9 +66,9 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="p" items=${"personajes"}>
+        <c:forEach var="p" items="${personajes}">
             <tr>
-                <td>${p.nombreCompleto()}></td>
+                <td>${p.nombreCompleto()}</td>
                 <td>${p.edad()}</td>
                 <td>${p.ocupacion()}</td>
                 <td>${p.lugar()}</td>

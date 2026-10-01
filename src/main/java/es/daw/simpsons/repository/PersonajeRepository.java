@@ -1,8 +1,7 @@
-package repository;
+package es.daw.simpsons.repository;
 
-import model.Personaje;
+import es.daw.simpsons.model.Personaje;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PersonajeRepository {

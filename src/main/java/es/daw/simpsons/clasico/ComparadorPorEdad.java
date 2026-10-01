@@ -1,6 +1,6 @@
-package clasico;
+package es.daw.simpsons.clasico;
 
-import model.Personaje;
+import es.daw.simpsons.model.Personaje;
 
 import java.util.Comparator;
 
@@ -28,7 +28,6 @@ public class ComparadorPorEdad implements Comparator<Personaje> {
         if (resultado == 0) {
             resultado = p1.nombre().compareTo(p2.nombre());
         }
-
         return resultado;
     }
 }
