@@ -52,9 +52,13 @@
 
     <button type="submit">Buscar</button>
     <a href="${pageContext.request.contextPath}/personajes">Limpiar filtros</a>
-</form>
+    </form>
 
-<p class="resumen"><strong>XXXXXXX</strong> personajes encontrados</p>
+<c:if test="${not empty error}">
+    <p class="error"> ${error}</p>
+<c:/if>
+
+<p class="resumen"><strong>${personajes.size()}</strong> personajes encontrados</p>
 
     <table>
         <thead>
