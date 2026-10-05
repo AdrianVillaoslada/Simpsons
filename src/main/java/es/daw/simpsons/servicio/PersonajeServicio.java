@@ -25,6 +25,8 @@ public class PersonajeServicio {
      * @return
      */
 
+    List<Personaje> personajes = repository.findAll();
+
     public List<Personaje> buscar(String lugar, Integer edadMax, String ordenarPor, boolean descendente, Integer limite){
         return repository.findAll().stream().filter( p -> lugar == null || lugar.isBlank() || p.lugar().equalsIgnoreCase(lugar))
                 .filter(p -> edadMax == null || p.edad() > edadMax)
@@ -32,6 +34,7 @@ public class PersonajeServicio {
                 .limit(limite == null ? Integer.MAX_VALUE : limite)
                 .toList();
     }
+
 
     /**
      *
