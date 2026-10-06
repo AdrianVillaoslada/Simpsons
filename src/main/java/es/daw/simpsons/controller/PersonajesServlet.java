@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.daw.simpsons.util.Utils;
+import es.daw.simpsons.servicio.PersonajeServicio;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import es.daw.simpsons.model.Personaje;
-import es.daw.simpsons.servicio.PersonajeServicio;
+
 import jdk.jshell.execution.Util;
 
 @WebServlet("/personajes")
@@ -33,13 +34,15 @@ public class PersonajesServlet extends HttpServlet {
 
         String limite = request.getParameter("limite");
 
+        String ocupacion = request.getParameter("ocupacion");
+
         List<Personaje> personajes = new ArrayList<>();
         // 2. Tratar los parametros. conversiones y validaciones
         try {
             Integer edadMaxInt =  Utils.leerEntero("Edad Maxima", edadMax);
             Integer limiteInt = Utils.leerEntero("Limite", limite);
 
-           personajes = servicio.buscar(lugar,edadMaxInt,ordenarPor,descendente,limiteInt);
+           personajes = servicio.buscar(lugar,edadMaxInt,ordenarPor,descendente,limiteInt, ocupacion);
 
         } catch (Exception e) {
             // escribir un mensaje de error en personajes.jsp

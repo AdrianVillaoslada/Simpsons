@@ -24,6 +24,15 @@
             </select>
         </label>
 
+        <label>Ocupación
+                    <select name="ocupacion">
+                        <option value="">— Todos —</option>
+                        <c:forEach var="o" items="${ocupaciones}">
+                            <option value="${o}" ${l == param.lugar ? 'selected' : ''}>${l}</option>
+                        </c:forEach>
+                    </select>
+                </label>
+
         <label>Edad máxima
             <input type="number" name="edadMax" min="0" value="">
         </label>
@@ -37,12 +46,18 @@
                 <option value="nombre">Nombre</option>
                 <option value="apellido">Apellido</option>
                 <option value="edad">Edad</option>
+                <option value="lugar">Lugar</option>
             </select>
         </label>
 
         <label class="check">
             <input type="checkbox" name="descendente" >
             Descendente
+        </label>
+
+        <label class="filtro Simpson">
+            <input  type="checkbox" name="soloFamilia" ${not empty param.soloFamilia ? 'checked' : ''}>
+            Familia simpson
         </label>
 
         <label>Mostrar como máximo
